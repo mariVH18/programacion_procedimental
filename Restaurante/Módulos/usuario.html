@@ -13,14 +13,14 @@
    <div class="field">
   <label class="label">Nombre</label>
   <div class="control">
-    <input class="input" type="text">
+    <input class="input" type="text" id="nombre">
   </div>
 </div>
 
 <div class="field">
   <label class="label">Apellido</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="text">
+    <input class="input is-success" type="text" id="apellido">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -34,7 +34,7 @@
   <label class="label">Tipo de documento</label>
   <div class="control">
     <div class="select">
-      <select>
+      <select id="tipo_documento">
         <option>Tarjeta identidad</option>
         <option>Cédula ciudadania</option>
         <option>Cédula extranjería</option>
@@ -46,7 +46,7 @@
 <div class="field">
   <label class="label">Número de Documento</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-danger" type="tel">
+    <input class="input is-danger" type="tel" id="numero_documento">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
@@ -59,7 +59,7 @@
 <div class="field">
   <label class="label">Teléfono</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-danger" type="tel">
+    <input class="input is-danger" type="tel" id="telefono">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
@@ -72,7 +72,7 @@
 <div class="field">
   <label class="label">Correo electrónico</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-danger" type="email">
+    <input class="input is-danger" type="email" id="correo">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
@@ -86,7 +86,7 @@
   <label class="label">Género</label>
   <div class="control">
     <div class="select">
-      <select>
+      <select id="genero">
         <option>Femenino</option>
         <option>Masculino</option>
       </select>
@@ -98,7 +98,7 @@
   <label class="label">Cargo</label>
   <div class="control">
     <div class="select">
-      <select>
+      <select id="cargo">
         <option>Estudiante</option>
         <option>Empleado</option>
         <option>Ama de casa</option>
@@ -112,7 +112,7 @@
 <div class="field">
   <label class="label">Fecha de Nacimiento</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="date">
+    <input class="input is-success" type="date" id="fecha_nacimiento">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -125,7 +125,7 @@
 <div class="field">
   <label class="label">Contraseña</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-success" type="password">
+    <input class="input is-success" type="password" id="contraseña">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
@@ -150,5 +150,6 @@
   onclick="window.location.href='../index.html'">
   Regresar
 </button>
+<script src="../js/usuario.js"></script>
 </body>
 </html>
