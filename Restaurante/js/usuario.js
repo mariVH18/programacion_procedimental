@@ -10,26 +10,26 @@ let fecha_nacimiento = document.getElementsById("fecha_nacimiento").value;
 let contraseña = document.getElementsById("contraseña").value;
 
 function ValidarDatos(){
-    if(nombre == '' || apellido == '' || numero_documento == '' || telefono == '' || correo == ''){
-         console.log("Los campos están vacios")
-    } 
-    else {
-    if(nombre != /[a-zA-Z]/){
-        console.log("Los datos son incorrectos")
+
+    if(!/^[a-zA-Z]+$/.test(nombre)){
+        console.log("El nombre solo debe contener letras");
     }
-    if(telefono.length() >= 10){
-        console.log("Los datos son incorrectos")
+
+    if(!/^[a-zA-Z]+$/.test(apellido)){
+        console.log("El apellido solo debe contener letras");
     }
-    if(correo != /[@]/){
-        console.log("El correo es invalido")
+
+    if(!/^[0-9]+$/.test(numero_documento)){
+        console.log("El número de documento no puede tener letras");
     }
-    if(apellido != /[a-zA-Z]/){
-        console.log("Los datos son incorrectos")
+
+    if(telefono.length < 10){
+        console.log("El teléfono debe tener mínimo 10 números");
     }
-    if(numero_documento != /^[0-9]+$/){
-        console.log("El numero de documento no puede tener letras")
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)){
+        console.log("El correo es inválido");
     }
-}
 }
        
 
