@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
-    />
-    <title>Pedidos</title>
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"/>
+    <title>Pedidos e Inventario</title>
     <style>
       body {
         display: flex;
@@ -19,16 +15,15 @@
         margin: 0;
       }
 
-      field {
-        width: 200%;
-        max-width: 800px;
-        margin-bottom: 2rem;
+      .field {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 1.5rem;
       }
     </style>
-    <title>Inventario</title>
 </head>
 <body>
-    <form class="box">
+    
   <div class="field">
     <label class="label">Producto</label>
     <div class="control">
@@ -59,13 +54,14 @@
 
   <div class="field">
     <label class="label">Método de pago</label>
-    <div class="select">
-  <select id="metodo_pago">
-    <option>Débito</option>
-    <option>Crédito</option>
-    <option>Nequi</option>
-  </select>
-</div>
+    <div class="select is-fullwidth">
+      <select id="metodo_pago">
+        <option value="">Seleccione un método...</option>
+        <option value="Debito">Débito</option>
+        <option value="Credito">Crédito</option>
+        <option value="Nequi">Nequi</option>
+      </select>
+    </div>
   </div>
 
   <div class="field">
@@ -75,15 +71,16 @@
     </div>
   </div>
 
-  <button class="button is-primary" id="guardar">Guardar</button>
-   <button class="button is-primary">Cancelar</button>
-</form>
-<button 
-  type="button" 
-  class="button is-primary"
-  onclick="window.location.href='../index.html'">
-  Regresar
-</button>
-<script src="../js/pedidos.js"></script>
+  <div class="buttons">
+    <button class="button is-primary" id="guardar">Guardar</button>
+    <button class="button is-light">Cancelar</button>
+    <button type="button" class="button is-link" onclick="window.location.href='../index.html'">
+      Regresar
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/pedidos.js"></script>
 </body>
 </html>

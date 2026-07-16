@@ -3,16 +3,19 @@ function validarFormulario() {
   let fecha = document.getElementById("fecha").value;
   let ingresos = document.getElementById("ingresos").value;
   let egresos = document.getElementById("egresos").value;
-  let valor_total = document.getElementById("valor_total").value;
+  let concepto = document.getElementById("concepto").value;
+  let valor = document.getElementById("valor").value;
 
   if (
-    ventas === "" || fecha === "" || ingresos === "" || egresos === "" || valor_total === ""
+    ventas === "" || fecha === "" || ingresos === "" || egresos === "" || concepto === "" || valor === ""
   ) {
     console.log("Los campos están vacíos");
     Swal.fire({
       position: "top-end",
       icon: "error",
       title: "Los campos están vacíos",
+      showConfirmButton: false,
+      timer: 1500
     });
     return;
   } else {
@@ -21,7 +24,7 @@ function validarFormulario() {
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Ventas solo puede contener números",
+        title: "Solo puede contener números",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -33,7 +36,7 @@ function validarFormulario() {
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Ingresos solo puede contener números",
+        title: "Solo puede contener números",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -45,32 +48,33 @@ function validarFormulario() {
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Ingresos solo puede contener números",
+        title: "Solo puede contener números",
         showConfirmButton: false,
         timer: 1500,
       });
       return;
     }
 
-    if (!/[0-9]/.test(valor_total)) {
-      console.log("Valor Total solo puede contener números");
+    if (!/[0-9]/.test(valor)) {
+      console.log("Valor solo puede contener números");
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Valor Total solo puede contener números",
+        title: "Solo puede contener números",
         showConfirmButton: false,
         timer: 1500,
       });
       return;
     }
+
     Swal.fire({
       position: "top-end",
       icon: "success",
-      title: "Your work has been saved",
+      title: "Tus datos se han guardado",
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1500
     });
   }
 }
 
-document.getElementById("btnGuardar").onclick = validarFormulario;
+document.getElementById("guardar").onclick = validarFormulario;
