@@ -1,58 +1,76 @@
-function validarInformacion() {
+function validarFormulario() {
+  let ventas = document.getElementById("ventas").value;
+  let fecha = document.getElementById("fecha").value;
+  let ingresos = document.getElementById("ingresos").value;
+  let egresos = document.getElementById("egresos").value;
+  let valor_total = document.getElementById("valor_total").value;
 
-    let ventas = document.getElementById("ventas").value;
-    let ingresos = document.getElementById("ingresos").value;
-    let egresos = document.getElementById("egresos").value;
-    let valor = document.getElementById("valor").value;
-
-    if (ventas.trim() === "" || ingresos.trim() === "" || egresos.trim() === "" || valor.trim() === "") {
-        Swal.fire({
-            icon: "warning",
-            title: "Campos vacíos",
-            text: "Todos los campos son obligatorios"
-        });
-        return;
-    }
-
-    if (!/^\d+$/.test(ventas)) {
-        Swal.fire({
-            icon: "error",
-            title: "Ventas inválidas",
-            text: "El campo Ventas solo debe contener números."
-        });
-        return;
-    }
-
-    if (!/^\d+$/.test(ingresos)) {
-        Swal.fire({
-            icon: "error",
-            title: "Ingresos inválidos",
-            text: "El campo Ingresos solo debe contener números."
-        });
-        return;
-    }
-
-    if (!/^\d+$/.test(egresos)) {
-        Swal.fire({
-            icon: "error",
-            title: "Egresos inválidos",
-            text: "El campo Egresos solo debe contener números."
-        });
-        return;
-    }
-
-    if (!/^\d+$/.test(valor)) {
-        Swal.fire({
-            icon: "error",
-            title: "Valor inválido",
-            text: "El campo Valor solo debe contener números."
-        });
-        return;
-    }
-
+  if (
+    ventas === "" || fecha === "" || ingresos === "" || egresos === "" || valor_total === ""
+  ) {
+    console.log("Los campos están vacíos");
     Swal.fire({
-        icon: "success",
-        title: "Registro correcto",
-        text: "La información fue validada correctamente."
+      position: "top-end",
+      icon: "error",
+      title: "Los campos están vacíos",
     });
+    return;
+  } else {
+    if (!/[0-9]/.test(ventas)) {
+      console.log("Ventas solo puede contener números");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Ventas solo puede contener números",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
+    }
+
+    if (!/[0-9]/.test(ingresos)) {
+      console.log("Ingresos solo puede contener números");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Ingresos solo puede contener números",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
+    }
+
+    if (!/[0-9]/.test(egresos)) {
+      console.log("Egresos solo puede contener números");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Ingresos solo puede contener números",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
+    }
+
+    if (!/[0-9]/.test(valor_total)) {
+      console.log("Valor Total solo puede contener números");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Valor Total solo puede contener números",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
+    }
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your work has been saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 }
+
+document.getElementById("btnGuardar").onclick = validarFormulario;
