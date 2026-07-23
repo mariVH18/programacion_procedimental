@@ -29,12 +29,12 @@ function validarFormulario() {
       return;
     }
 
-    if (!/[0-9]/.test(nombre_producto)) {
-      console.log("Nombre producto solo puede contener números");
+    if (!/^[a-zA-Z]+$/.test(nombre_producto)) {
+      console.log("Nombre producto solo puede contener letras");
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Solo puede contener números",
+        title: "Solo puede contener letras",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -53,12 +53,12 @@ function validarFormulario() {
       return;
     }
 
-    if (!/[0-9]/.test(marca_producto)) {
-      console.log("Marca producto solo puede contener números");
+    if (!/^[a-zA-Z]+$/.test(marca_producto)) {
+      console.log("Marca producto solo puede contener letras");
       Swal.fire({
         position: "top-end",
         icon: "error",
-        title: "Solo puede contener números",
+        title: "Solo puede contener letras",
         showConfirmButton: false,
         timer: 1500,
       });
