@@ -63,7 +63,7 @@ function validarFormulario() {
   });
 }
 
-// Función auxiliar para no repetir tanto código de alerta
+
 function mostrarAlertaError(mensaje) {
   console.log(mensaje);
   Swal.fire({
@@ -74,5 +74,5 @@ function mostrarAlertaError(mensaje) {
   });
 }
 
-// Asignar el evento al cargar el documento
+
 document.getElementById("guardar").onclick = validarFormulario;
