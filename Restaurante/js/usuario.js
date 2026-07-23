@@ -1,36 +1,96 @@
-let nombre = document.getElementsById("nombre").value;
-let apellido = document.getElementsById("apellido").value;
-let tipo_documento = document.getElementsByName("tipo_documento").value;
-let numero_documento = document.getElementsByName("numero_documento").value;
-let telefono = document.getElementsById("telefono").value;
-let correo = document.getElementsById("correo").value;
-let genero = document.getElementsByName("genero").value;
-let cargo = document.getElementsByName("cargo").value;
-let fecha_nacimiento = document.getElementsById("fecha_nacimiento").value;
-let contraseña = document.getElementsById("contraseña").value;
+function validarFormulario() {
+     let nombre = document.getElementById("nombre").value;
+     let apellido = document.getElementById("apellido").value;
+     let numero_documento = document.getElementById("numero_documento").value;
+     let telefono = document.getElementById("telefono").value;
+    let correo = document.getElementById("correo").value;
 
-function ValidarDatos(){
 
-    if(!/^[a-zA-Z]+$/.test(nombre)){
-        console.log("El nombre solo debe contener letras");
+  if (
+    nombre === "" || apellido === "" || numero_documento === "" || telefono === "" || correo === ""
+  ) {
+    console.log("Los campos están vacíos");
+    Swal.fire({
+      position: "top-end",
+      icon: "error",
+      title: "Los campos están vacíos",
+      showConfirmButton: false,
+      timer: 1500
+    });
+    return;
+  } else {
+    if (!/^[a-zA-Z]+$/.test(nombre)) {
+      console.log("Nombre producto solo puede contener letras");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Solo puede contener letras",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
     }
 
-    if(!/^[a-zA-Z]+$/.test(apellido)){
-        console.log("El apellido solo debe contener letras");
+    if (!/^[a-zA-Z]+$/.test(apellido)) {
+      console.log("Apellido solo puede contener Letras");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Solo puede contener letras",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
     }
 
-    if(!/^[0-9]+$/.test(numero_documento)){
-        console.log("El número de documento no puede tener letras");
+    if (!/[0-9]/.test(numero_documento)) {
+      console.log("Numero de documento solo puede contener números");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Solo puede contener números",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
     }
 
-    if(telefono.length < 10){
-        console.log("El teléfono debe tener mínimo 10 números");
+     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+      console.log("Correo tiene que tener @");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Necesita un @",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
     }
 
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)){
-        console.log("El correo es inválido");
+    if (!/[0-9]/.test(telefono)) {
+      console.log("Telefono solo puede contener números");
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Solo puede contener números",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return;
     }
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Tus datos se han guardado",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 }
-       
+
+document.getElementById("guardar").onclick = validarFormulario;
+
+
 
 
